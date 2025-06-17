@@ -1,0 +1,5 @@
+com\example\StudentController.class
+com\example\StudentService.class
+com\example\Student.class
+com\example\StudentJdbcRepository.class
+main\java\com\example\btap5.class

@@ -1,0 +1,16 @@
+tạo dự án maven:
+
+nhấn ctr+shift+p
+
+chọn create java project 
+
+rồi chọn maven for java 
+
+sau đó chọn cái no gì đấy ý là tạo trống
+
+
+** cập nhật các file xong thì mở terminal
+1. bấm mvn compile để tạo folder hhoàn chỉnh 
+2. mvn spring-boot:run để chạy 
+
+< lệnh java -jar target/(tên folder)-1.0-SNAPSHOT.jar >-lệnh này để chạy ăn bớt
