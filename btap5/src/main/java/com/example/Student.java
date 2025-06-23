@@ -14,7 +14,6 @@ public class Student {
         this.age = age;
     }
 
-    // Getters và Setters
     public int getId() {
         return id;
     }

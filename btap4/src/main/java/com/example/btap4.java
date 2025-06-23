@@ -14,6 +14,10 @@ public class btap4 {
 
         // Thêm một sinh viên mẫu (tùy chọn)
         repository.addStudent(new Student(0, "hung", 20));
+        repository.addStudent(new Student(0, "Dieu", 20));
+        repository.addStudent(new Student(0, "Bac", 20));
+        repository.addStudent(new Student(0, "Ngoc", 20));
+        repository.addStudent(new Student(0, "Nhi ", 20));
 
         // Hiển thị danh sách sinh viên
         List<Student> students = repository.getAllStudents();

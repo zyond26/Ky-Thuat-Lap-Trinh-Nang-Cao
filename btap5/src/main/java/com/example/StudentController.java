@@ -5,19 +5,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @Controller
 @RequestMapping("/students")
-
 public class StudentController {
+
     @Autowired
     private StudentService studentService;
 
     @GetMapping
     public String listStudents(Model model) {
-        List<Student> students = studentService.getAllStudents();
-        model.addAttribute("students", students);
+        System.out.println("listStudents called");
+        model.addAttribute("students", studentService.getAllStudents());
         return "studentList";
     }
 
@@ -28,9 +26,16 @@ public class StudentController {
     }
 
     @PostMapping("/add")
-    public String addStudent(@ModelAttribute Student student) {
-        studentService.addStudent(student);
-        return "redirect:/students";
+    public String addStudent(@ModelAttribute("student") Student student, Model model) {
+        try {
+            System.out.println("Adding student: Name=" + student.getName() + ", Age=" + student.getAge());
+            studentService.addStudent(student);
+            return "redirect:/students";
+        } catch (Exception e) {
+            e.printStackTrace();
+            model.addAttribute("error", "Failed to add student: " + e.getMessage());
+            return "addStudent";
+        }
     }
 
     @GetMapping("/delete/{id}")

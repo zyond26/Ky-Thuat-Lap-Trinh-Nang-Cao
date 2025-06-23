@@ -7,18 +7,19 @@ import java.util.List;
 
 @Service
 public class StudentService {
+
     @Autowired
-    private StudentJdbcRepository repository;
+    private StudentJdbcRepository studentRepository;
 
     public List<Student> getAllStudents() {
-        return repository.findAll();
+        return studentRepository.findAll();
     }
 
     public void addStudent(Student student) {
-        repository.save(student);
+        studentRepository.save(student);
     }
 
     public void deleteStudent(int id) {
-        repository.deleteById(id);
+        studentRepository.delete(id);
     }
 }
