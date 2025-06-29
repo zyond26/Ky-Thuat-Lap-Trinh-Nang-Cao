@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giải Phương Trình Bậc 2</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+    <div class="calculator">
+        <h1>Giải Phương Trình Bậc 2</h1>
+        <p>Phương trình: ax² + bx + c = 0</p>
+        <form th:action="@{/solve}" method="post">
+            <div class="input-group">
+                <label for="a">Hệ số a:</label>
+                <input type="number" id="a" name="a" placeholder="Nhập a" step="any" required>
+            </div>
+            <div class="input-group">
+                <label for="b">Hệ số b:</label>
+                <input type="number" id="b" name="b" placeholder="Nhập b" step="any" required>
+            </div>
+            <div class="input-group">
+                <label for="c">Hệ số c:</label>
+                <input type="number" id="c" name="c" placeholder="Nhập c" step="any" required>
+            </div>
+            <button type="submit">Giải</button>
+        </form>
+        <div id="result" th:if="${result}" th:text="${result}"></div>
+    </div>
+    <script th:src="@{/js/script.js}"></script>
+</body>
+
+</html>
