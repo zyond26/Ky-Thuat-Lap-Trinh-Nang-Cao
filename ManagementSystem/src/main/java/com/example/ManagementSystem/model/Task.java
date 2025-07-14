@@ -8,16 +8,14 @@ import jakarta.annotation.Generated;
 
 @EntityScan
 public class Task {
-    private static final String GenerationType = null;
 
-    @Id
-    @Generated(comments = GenerationType.IDENTITY, value = { "" })
+    private static final String GenerationType = null;
+    private static final String EnumType = null;
     private Long id;
 
     private String title;
     private String description;
 
-    @Enumerated(EnumType.STRING)
     private TaskStatus status;
 
     private LocalDate dueDate;
